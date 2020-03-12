@@ -2,7 +2,7 @@
 name = "usbow"
 version = "0.0.1"
 categories = ["hardware-support", "embedded", "no-std"]
-description = "nRF52840 experiments"
+description = "nRF52840 USB over wireless experiments"
 keywords = ["nrf52840", "nrf52"]
 authors = ["Dimitri Fedorov <df.41356@gmail.com>"]
 readme = "README.md"
