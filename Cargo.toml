@@ -1,0 +1,30 @@
+[package]
+name = "usbow"
+version = "0.0.1"
+categories = ["hardware-support", "embedded", "no-std"]
+description = "nRF52840 experiments"
+keywords = ["nrf52840", "nrf52"]
+authors = ["Dimitri Fedorov <df.41356@gmail.com>"]
+readme = "README.md"
+publish = false
+edition = "2018"
+
+[profile.dev]
+opt-level = "s"
+
+[profile.release]
+opt-level = "s"
+debug = false
+lto = true
+codegen-units = 1
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log = "0.4"
+nrf52840-pac = "0.8"
+nrf52840-hal = "0.8"
+cortex-m = "0.6"
+cortex-m-rt = "0.6"
+cortex-m-rtfm = "0.5"
+panic-itm = "0.4"
