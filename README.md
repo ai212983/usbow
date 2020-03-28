@@ -1,6 +1,6 @@
 # USB Over Wireless with nRF52840
 
-Work in progress USB Over Wireless with nRF52840-DK pca10056 with MAX3421E USB Host.
+Work in progress USB Over Wireless with nRF52840-DK pca10056 with MAX3421E-based [USB Host Shield].
 
 
 ## Debug
@@ -35,10 +35,11 @@ telnet localhost 2332
 
 - `nrf52840-pac` version 0.9 breaks compilation
 
-
+https://www.maximintegrated.com/en/design/technical-documents/tutorials/5/5884.html
 
 [JLinkGDBServer]:https://www.segger.com/products/debug-probes/j-link/tools/j-link-gdb-server/about-j-link-gdb-server/
 [NRF Logger module]:https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_getting_started%2FUG%2Fgs%2Fdevelop_sw.html&cp=1_0_2
 [RTT]:https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/
 [RTT Viewer]:https://www.segger.com/products/debug-probes/j-link/tools/rtt-viewer/
 [SWO via USB]:https://wiki.segger.com/How_to_use_SWO_with_GDB
+[USB Host Shield]:https://www.arduino.cc/en/Main/ArduinoUSBHostShield
