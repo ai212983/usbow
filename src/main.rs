@@ -37,7 +37,7 @@ const APP: () = {
         let mut x = 0;
         loop {
             if x < 10 {
-                iprintln!(itm, " Running {r", x);
+                iprintln!(itm, " Running {}", x);
                 x = x + 1;
             }
         }
