@@ -1,0 +1,3 @@
+[submodule "nrf52-hal"]
+	path = nrf52-hal
+	url = git@github.com:nrf-rs/nrf52-hal.git

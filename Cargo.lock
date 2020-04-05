@@ -2,6 +2,12 @@
 # It is not intended for manual editing.
 [[package]]
 name = "aligned"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d39da9b88ae1a81c03c9c082b8db83f1d0e93914126041962af61034ab44c4a5"
+
+[[package]]
+name = "aligned"
 version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "eb1ce8b3382016136ab1d31a1b5ce807144f8b7eb2d5f16b2108f0f07edceb94"
@@ -58,11 +64,23 @@ checksum = "4785bdd1c96b2a846b2bd7cc02e86b6b3dbf14e7e53446c4f54c92a361040822"
 
 [[package]]
 name = "cortex-m"
+version = "0.5.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3c0b159a1e8306949579de3698c841dba58058197b65c60807194e4fa1e7a554"
+dependencies = [
+ "aligned 0.2.0",
+ "bare-metal",
+ "cortex-m 0.6.2",
+ "volatile-register",
+]
+
+[[package]]
+name = "cortex-m"
 version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2954942fbbdd49996704e6f048ce57567c3e1a4e2dc59b41ae9fde06a01fc763"
 dependencies = [
- "aligned",
+ "aligned 0.3.2",
  "bare-metal",
  "volatile-register",
 ]
@@ -94,7 +112,7 @@ version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "eaf0b9fd3f042cb3793d15daf3cea201b2f25c99b0b5b936a551bb6909c3ae5b"
 dependencies = [
- "cortex-m",
+ "cortex-m 0.6.2",
  "cortex-m-rt",
  "cortex-m-rtfm-macros",
  "heapless",
@@ -197,12 +215,10 @@ checksum = "b1411551beb3c11dedfb0a90a0fa256b47d28b9ec2cdff34c25a2fa59e45dbdc"
 
 [[package]]
 name = "nrf52-hal-common"
-version = "0.8.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "03dcdf72cd52a1c4829905e08a90ad6f4dc0f9d15ecf1883cc74f098199aa873"
+version = "0.9.0"
 dependencies = [
  "cast",
- "cortex-m",
+ "cortex-m 0.5.10",
  "embedded-hal",
  "fpa",
  "nb",
@@ -212,13 +228,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "nrf52840-dk-bsp"
+version = "0.1.0"
+dependencies = [
+ "cortex-m 0.5.10",
+ "cortex-m-rt",
+ "embedded-hal",
+ "nrf52840-hal",
+]
+
+[[package]]
 name = "nrf52840-hal"
-version = "0.8.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4bda1195bbf2afaa1570a2aa86566237105e7f6a5500fee5905c6a0c64e7917b"
+version = "0.9.0"
 dependencies = [
  "cast",
- "cortex-m",
+ "cortex-m 0.5.10",
  "embedded-hal",
  "nb",
  "nrf52-hal-common",
@@ -228,12 +252,12 @@ dependencies = [
 
 [[package]]
 name = "nrf52840-pac"
-version = "0.8.0"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e375b19eec5ae6c75387ea2fff3d5a6f989d65a0af350fcfe854f31243bfdfe2"
+checksum = "e1b780a5afd2621774652f28c82837f6aa6d19cf0ad71c734fc1fe53298a2d73"
 dependencies = [
  "bare-metal",
- "cortex-m",
+ "cortex-m 0.6.2",
  "cortex-m-rt",
  "vcell",
 ]
@@ -244,7 +268,7 @@ version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "98830d17a95587207e41edaa3009b143d326ce134b0e3538ac98246a67d66cc3"
 dependencies = [
- "cortex-m",
+ "cortex-m 0.6.2",
 ]
 
 [[package]]
@@ -273,9 +297,9 @@ checksum = "e2a38df5b15c8d5c7e8654189744d8e396bddc18ad48041a500ce52d6948941f"
 
 [[package]]
 name = "rand_core"
-version = "0.4.2"
+version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9c33a3c44ca05fa6f1807d8e6743f3824e8509beca625669633be0acbdf509dc"
+checksum = "90bde5296fc891b0cef12a6d03ddccc162ce7b2aff54160af9338f8d40df6d19"
 
 [[package]]
 name = "rtfm-core"
@@ -351,10 +375,12 @@ checksum = "826e7639553986605ec5979c7dd957c7895e93eabed50ab2ffa7f6128a75097c"
 name = "usbow"
 version = "0.0.1"
 dependencies = [
- "cortex-m",
+ "cortex-m 0.6.2",
  "cortex-m-rt",
  "cortex-m-rtfm",
  "log",
+ "nb",
+ "nrf52840-dk-bsp",
  "nrf52840-hal",
  "nrf52840-pac",
  "panic-itm",

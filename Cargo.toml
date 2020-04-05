@@ -22,9 +22,12 @@ codegen-units = 1
 
 [dependencies]
 log = "0.4"
-nrf52840-pac = "0.8"
-nrf52840-hal = "0.8"
+nrf52840-pac = "0.9"
+# most recent version 0.9 is at github, not at crates.io
+nrf52840-hal = { path = "nrf52-hal/nrf52840-hal" }
+nrf52840-dk-bsp = { path = "nrf52-hal/boards/nRF52840-DK" }
 cortex-m = "0.6"
 cortex-m-rt = "0.6"
 cortex-m-rtfm = "0.5"
 panic-itm = "0.4"
+nb = "~0.1"
