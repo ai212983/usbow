@@ -43,3 +43,5 @@ https://www.maximintegrated.com/en/design/technical-documents/tutorials/5/5884.h
 [RTT Viewer]:https://www.segger.com/products/debug-probes/j-link/tools/rtt-viewer/
 [SWO via USB]:https://wiki.segger.com/How_to_use_SWO_with_GDB
 [USB Host Shield]:https://www.arduino.cc/en/Main/ArduinoUSBHostShield
+[USB Host Shield schematics]:https://www.arduino.cc/en/uploads/Main/USBHostShield-Rev2.pdf
+[MAX3421E Programming Guide]:https://pdfserv.maximintegrated.com/en/an/AN3785.pdf
